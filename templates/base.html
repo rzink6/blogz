@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{title}}</title>
+        <style>
+            .flashes{
+                color: red;
+            }
+            h1 {
+                text-align: center;
+            }
+            h2 {
+        text-align: center;
+            }
+            p {
+                text-align: center;
+            }
+            hr {
+                color: #E7D8D8;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <a href='/blog'>Main Blog Page</a>
+        </div>
+        <div>
+            <a href='/newpost'>Add a Blog Entry</a>
+        </div>
+
+        {% with messages = get_flashed_messages() %}
+        <p class=flashes>
+            {% for message in messages %}
+            {{message}}
+            {% endfor %}
+        </p>
+    {% endwith %}
+
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>
