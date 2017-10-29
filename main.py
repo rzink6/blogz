@@ -33,7 +33,6 @@ def blog():
     blog_id = request.args.get('id')
 
     if blog_id:
-        print('blog_id=', blog_id)
         blog = Blog.query.get(blog_id)
         return render_template('post.html',blog=blog)
 
