@@ -6,11 +6,8 @@
 {% for blog in blogs %}
     <td><h2><a href="/blog?id={{blog.id}}">{{blog.title}}</a></h2></td>
     <td><p>{{blog.body}}</p></td>
-        <!-- <form method='POST' action='/newpost' style='display:inline-block'> -->
-        <!--    <input type='hidden' name='blog-id' value='{{blog.id}}' /> -->
-        </form>
+    <td><p>blog written by<a href="/blog?user={{blog.owner.id}}"> {{blog.owner.username}}</a></p></td>
     <hr>
-
 {% endfor %}
     
 

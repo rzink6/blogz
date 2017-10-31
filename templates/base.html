@@ -22,11 +22,24 @@
     </head>
     <body>
         <div>
+            <a href='/'>Home</a>
+        </div>
+        <div>
             <a href='/blog'>Main Blog Page</a>
         </div>
         <div>
             <a href='/newpost'>Add a Blog Entry</a>
         </div>
+        {% if 'username' in session %}
+        <div>
+            <a href='/logout'>Log out</a>
+        </div>
+        {% endif %}
+        {% if 'username' not in session %}
+        <div>
+            <a href='/login'>Login</a>
+        </div>
+        {% endif %}
 
         {% with messages = get_flashed_messages() %}
         <p class=flashes>

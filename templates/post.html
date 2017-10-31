@@ -1,12 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<td><h1><a href='/blog?id={{blog.id}}'>{{blog.title}}</a></h1></td>
+<td><h1><a href='/blog?id={{blogs.id}}'>{{blogs.title}}</a></h1></td>
 
-<td><p>{{blog.body}}</p></td>
-
-
-
+<td><p>{{blogs.body}}</p></td>
+<td><p>blog written by<a href="/blog?user={{blogs.owner.id}}"> {{blogs.owner.username}}</a></p></td>
 
 
 
